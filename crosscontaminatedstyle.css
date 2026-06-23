@@ -1,0 +1,270 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Space Grotesk', sans-serif;
+    background:#0a0a0a;
+    color:white;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* =========================
+   COLOR THEME
+========================= */
+
+:root{
+    --accent:#007FE0;
+    --accent2:white;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 6%;
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+    position:sticky;
+    top:0;
+
+    background:#0a0a0a;
+    z-index:1000;
+}
+
+/* LOGO */
+
+#nav-left a{
+    display:flex;
+    align-items:center;
+    
+
+    font-weight:700;
+    font-size:1.2rem;
+
+    transition:0.3s;
+}
+
+.logotitlewhite{
+    color: white;
+    gap:0px;
+    transition:0.3s;
+}
+
+.logotitle:hover .logotitlewhite{
+  color: #007FE0;
+}
+
+.logotitleblue{
+    color: #007FE0;
+    gap:0px;
+    transition:0.3s;
+}
+
+.logotitle:hover .logotitleblue{
+  color: white;
+}
+
+.logo{
+    width:50px;
+    margin:15px;
+}
+
+/* CENTER NAV */
+
+#nav-center ul{
+    display:flex;
+    gap:55px;
+}
+
+#nav-center a{
+    font-weight:700;
+    letter-spacing:2px;
+    font-size:0.9rem;
+
+    position:relative;
+
+    transition:0.3s;
+}
+
+#nav-center a:hover{
+    color:var(--accent);
+}
+
+#nav-center a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:var(--accent);
+
+    transition:0.3s;
+}
+
+#nav-center a:hover::after{
+    width:100%;
+}
+
+/* SOCIAL */
+
+#nav-right ul{
+    display:flex;
+    gap:22px;
+}
+
+#nav-right a{
+    font-size:1.1rem;
+    transition:0.3s;
+}
+
+#nav-right a:hover{
+    color:var(--accent);
+    transform:translateY(-2px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+#showcase-main{
+    text-align:center;
+    padding:100px 20px 60px;
+}
+
+.hero-title{
+    font-size:4.5rem;
+    font-weight:800;
+    letter-spacing:3px;
+}
+
+.hero-subtitle{
+    color:var(--accent);
+    font-size:1.4rem;
+    margin-bottom:30px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+#showcase-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.showcase-wrapper{
+    background:#121212;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:12px;
+
+    padding:40px 30px;
+
+    transition:0.3s;
+}
+
+.showcase-wrapper:hover{
+    transform:translateY(-8px);
+    border-color:var(--accent);
+    box-shadow:0 0 25px rgba(0,127,224,0.2);
+}
+
+.showcase-wrapper h3{
+    color:var(--accent);
+    margin-bottom:15px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    margin-top:80px;
+    padding:40px 20px;
+
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.footer-text{
+  color: #007FE0;
+}
+
+#contactnav{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-bottom:20px;
+}
+
+#contactnav a{
+    font-size:1.2rem;
+    transition:0.3s;
+}
+
+#contactnav a:hover{
+    color:var(--accent);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+#mobile-menu{
+    display:none;
+}
+
+/* hide desktop nav on mobile */
+@media(max-width:900px){
+
+    #nav-center,
+    #nav-right{
+        display:none;
+    }
+
+    #mobile-menu{
+        display:block;
+    }
+
+    nav{
+        justify-content:space-between;
+    }
+
+    .hero-title{
+        font-size:2.8rem;
+    }
+}
